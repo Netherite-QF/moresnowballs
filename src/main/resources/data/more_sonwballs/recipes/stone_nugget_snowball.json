@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "more_snowballs:stone_nugget"
+    },
+    "%": {
+      "item": "minecraft:snowball"
+    }
+  },
+  "pattern": [
+    "###",
+    "#%#",
+    "###"
+  ],
+  "result": {
+    "item": "more_snowballs:stone_nugget_snowball"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:glow_ink_sac"
+    },
+    "%": {
+      "item": "minecraft:snowball"
+    }
+  },
+  "pattern": [
+    "###",
+    "#%#",
+    "###"
+  ],
+  "result": {
+    "item": "more_snowballs:glow_ink_snowball"
+  }
+}

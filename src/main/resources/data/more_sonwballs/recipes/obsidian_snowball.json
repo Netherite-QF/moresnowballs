@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:obsidian"
+    },
+    "%": {
+      "item": "minecraft:snowball"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#%#",
+    " # "
+  ],
+  "result": {
+    "item": "more_snowballs:obsidian_snowball"
+  }
+}

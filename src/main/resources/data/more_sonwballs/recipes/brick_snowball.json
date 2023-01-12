@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:brick"
+    }
+  ],
+  "result": {
+    "item": "more_snowballs:brick_snowball"
+  }
+}

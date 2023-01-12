@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "more_snowballs",
+  "version": "fabric-1.19.2-1.0",
+  "name": "MoreSnowballs",
+  "description": "This mod adds more snowballs to Minecraft",
+  "authors": [
+    "MaoMao"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/more_snowballs/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.maomao.more_snowballs.client.MoreSnowballsClient"
+    ],
+    "main": [
+      "com.maomao.more_snowballs.MoreSnowballs"
+    ]
+  },
+  "mixins": [
+    "MoreSnowballs.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.12",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}

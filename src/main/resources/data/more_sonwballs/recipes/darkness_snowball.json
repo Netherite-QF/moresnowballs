@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:echo_shard"
+    },
+    "%": {
+      "item": "more_snowballs:ice_snowball"
+    }
+  },
+  "pattern": [
+    "###",
+    "#%#",
+    "###"
+  ],
+  "result": {
+    "item": "more_snowballs:darkness_snowball"
+  }
+}

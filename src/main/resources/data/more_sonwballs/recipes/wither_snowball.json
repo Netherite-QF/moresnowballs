@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "more_snowballs:ice_snowball"
+    },
+    {
+      "item": "more_snowballs:wither_bone"
+    }
+  ],
+  "result": {
+    "item": "more_snowballs:wither_snowball"
+  }
+}
