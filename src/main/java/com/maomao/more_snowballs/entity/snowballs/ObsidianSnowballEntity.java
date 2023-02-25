@@ -17,9 +17,9 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class ObsidianSnowballEntity extends ThrownItemEntity {
-    public ObsidianSnowballEntity(EntityType<? extends ObsidianSnowballEntity> entityType, World world) {
+    /*public ObsidianSnowballEntity(EntityType<? extends ObsidianSnowballEntity> entityType, World world) {
         super(entityType, world);
-    }
+    }*/
 
     public ObsidianSnowballEntity(World world, LivingEntity owner) {
         super(MoreSnowballs.OBSIDIAN_SNOWBALL_ENTITY_ENTITY_TYPE, owner, world);
@@ -27,6 +27,10 @@ public class ObsidianSnowballEntity extends ThrownItemEntity {
 
     public ObsidianSnowballEntity(World world, double x, double y, double z) {
         super(MoreSnowballs.OBSIDIAN_SNOWBALL_ENTITY_ENTITY_TYPE, x, y, z, world);
+    }
+
+    public ObsidianSnowballEntity(EntityType<Entity> entityEntityType, World world) {
+        super(EntityType.SNOWBALL, world);
     }
 
     protected Item getDefaultItem() {

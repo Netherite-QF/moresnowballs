@@ -19,9 +19,9 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class SpectralSnowballEntity extends ThrownItemEntity {
-    public SpectralSnowballEntity(EntityType<? extends SpectralSnowballEntity> entityType, World world) {
+    /*public SpectralSnowballEntity(EntityType<? extends SpectralSnowballEntity> entityType, World world) {
         super(entityType, world);
-    }
+    }*/
 
     public SpectralSnowballEntity(World world, LivingEntity owner) {
         super(MoreSnowballs.SPECTRAL_SNOWBALL_ENTITY_ENTITY_TYPE, owner, world);
@@ -29,6 +29,10 @@ public class SpectralSnowballEntity extends ThrownItemEntity {
 
     public SpectralSnowballEntity(World world, double x, double y, double z) {
         super(MoreSnowballs.SPECTRAL_SNOWBALL_ENTITY_ENTITY_TYPE, x, y, z, world);
+    }
+
+    public SpectralSnowballEntity(EntityType<Entity> entityEntityType, World world) {
+        super(EntityType.SNOWBALL, world);
     }
 
     protected Item getDefaultItem() {

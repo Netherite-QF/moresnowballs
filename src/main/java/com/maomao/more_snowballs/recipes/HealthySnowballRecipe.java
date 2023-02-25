@@ -12,6 +12,7 @@ import net.minecraft.item.PotionItem;
 import net.minecraft.potion.PotionUtil;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
+import net.minecraft.recipe.book.CraftingRecipeCategory;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
@@ -19,8 +20,8 @@ import net.minecraft.world.World;
 public class HealthySnowballRecipe extends SpecialCraftingRecipe {
     private int HealthySnowballSlot = 0;
 
-    public HealthySnowballRecipe(Identifier id) {
-        super(id);
+    public HealthySnowballRecipe(Identifier id, CraftingRecipeCategory category) {
+        super(id, category);
     }
 
     public boolean matches(CraftingInventory inventory, World world) {

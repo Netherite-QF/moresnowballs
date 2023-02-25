@@ -19,9 +19,9 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class AmethystSnowballEntity extends ThrownItemEntity {
-    public AmethystSnowballEntity(EntityType<? extends AmethystSnowballEntity> entityType, World world) {
+    /*public AmethystSnowballEntity(EntityType<? extends AmethystSnowballEntity> entityType, World world) {
         super(entityType, world);
-    }
+    }*/
 
     public AmethystSnowballEntity(World world, LivingEntity owner) {
         super(MoreSnowballs.AMETHYST_SNOWBALL_ENTITY_ENTITY_TYPE, owner, world);
@@ -29,6 +29,10 @@ public class AmethystSnowballEntity extends ThrownItemEntity {
 
     public AmethystSnowballEntity(World world, double x, double y, double z) {
         super(MoreSnowballs.AMETHYST_SNOWBALL_ENTITY_ENTITY_TYPE, x, y, z, world);
+    }
+
+    public AmethystSnowballEntity(EntityType<Entity> entityEntityType, World world) {
+        super(EntityType.SNOWBALL, world);
     }
 
     protected Item getDefaultItem() {

@@ -20,9 +20,9 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class ExpSnowballEntity extends ThrownItemEntity {
-    public ExpSnowballEntity(EntityType<? extends ExpSnowballEntity> entityType, World world) {
+    /*public ExpSnowballEntity(EntityType<? extends ExpSnowballEntity> entityType, World world) {
         super(entityType, world);
-    }
+    }*/
 
     public ExpSnowballEntity(World world, LivingEntity owner) {
         super(MoreSnowballs.EXP_SNOWBALL_ENTITY_ENTITY_TYPE, owner, world);
@@ -30,6 +30,10 @@ public class ExpSnowballEntity extends ThrownItemEntity {
 
     public ExpSnowballEntity(World world, double x, double y, double z) {
         super(MoreSnowballs.EXP_SNOWBALL_ENTITY_ENTITY_TYPE, x, y, z, world);
+    }
+
+    public ExpSnowballEntity(EntityType<Entity> entityEntityType, World world) {
+        super(EntityType.SNOWBALL, world);
     }
 
     protected Item getDefaultItem() {

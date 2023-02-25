@@ -23,9 +23,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion.DestructionType;
 
 public class GunpowderSnowballEntity extends ThrownItemEntity {
-    public GunpowderSnowballEntity(EntityType<? extends GunpowderSnowballEntity> entityType, World world) {
+    /*public GunpowderSnowballEntity(EntityType<? extends GunpowderSnowballEntity> entityType, World world) {
         super(entityType, world);
-    }
+    }*/
 
     public GunpowderSnowballEntity(World world, LivingEntity owner) {
         super(MoreSnowballs.GUNPOWDER_SNOWBALL_ENTITY_ENTITY_TYPE, owner, world);
@@ -33,6 +33,10 @@ public class GunpowderSnowballEntity extends ThrownItemEntity {
 
     public GunpowderSnowballEntity(World world, double x, double y, double z) {
         super(MoreSnowballs.GUNPOWDER_SNOWBALL_ENTITY_ENTITY_TYPE, x, y, z, world);
+    }
+
+    public GunpowderSnowballEntity(EntityType<Entity> entityEntityType, World world) {
+        super(EntityType.SNOWBALL, world);
     }
 
     protected Item getDefaultItem() {
@@ -60,7 +64,7 @@ public class GunpowderSnowballEntity extends ThrownItemEntity {
         Entity entity = entityHitResult.getEntity();
         int i = 2;
         entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), (float)i);
-        this.world.createExplosion((Entity)null, entity.getX(), entity.getY(), entity.getZ(), 0.1F, DestructionType.BREAK);
+        this.world.createExplosion((Entity)null, entity.getX(), entity.getY(), entity.getZ(), 0.1F, World.ExplosionSourceType.TNT);
     }
 
     protected void onCollision(HitResult hitResult) {

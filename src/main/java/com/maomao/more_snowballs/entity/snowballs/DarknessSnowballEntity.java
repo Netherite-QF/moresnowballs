@@ -8,6 +8,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.projectile.thrown.SnowballEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -21,9 +22,9 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class DarknessSnowballEntity extends ThrownItemEntity {
-    public DarknessSnowballEntity(EntityType<? extends DarknessSnowballEntity> entityType, World world) {
+    /*public DarknessSnowballEntity(EntityType<? extends DarknessSnowballEntity> entityType, World world) {
         super(entityType, world);
-    }
+    }*/
 
     public DarknessSnowballEntity(World world, LivingEntity owner) {
         super(MoreSnowballs.DARKNESS_SNOWBALL_ENTITY_ENTITY_TYPE, owner, world);
@@ -31,6 +32,10 @@ public class DarknessSnowballEntity extends ThrownItemEntity {
 
     public DarknessSnowballEntity(World world, double x, double y, double z) {
         super(MoreSnowballs.DARKNESS_SNOWBALL_ENTITY_ENTITY_TYPE, x, y, z, world);
+    }
+
+    public DarknessSnowballEntity(EntityType<Entity> entityEntityType, World world) {
+        super(EntityType.SNOWBALL, world);
     }
 
     protected Item getDefaultItem() {

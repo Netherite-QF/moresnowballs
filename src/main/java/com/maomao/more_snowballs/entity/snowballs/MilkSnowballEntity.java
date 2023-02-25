@@ -18,9 +18,9 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class MilkSnowballEntity extends ThrownItemEntity {
-    public MilkSnowballEntity(EntityType<? extends MilkSnowballEntity> entityType, World world) {
+    /*public MilkSnowballEntity(EntityType<? extends MilkSnowballEntity> entityType, World world) {
         super(entityType, world);
-    }
+    }*/
 
     public MilkSnowballEntity(World world, LivingEntity owner) {
         super(MoreSnowballs.MILK_SNOWBALL_ENTITY_ENTITY_TYPE, owner, world);
@@ -28,6 +28,10 @@ public class MilkSnowballEntity extends ThrownItemEntity {
 
     public MilkSnowballEntity(World world, double x, double y, double z) {
         super(MoreSnowballs.MILK_SNOWBALL_ENTITY_ENTITY_TYPE, x, y, z, world);
+    }
+
+    public MilkSnowballEntity(EntityType<Entity> entityEntityType, World world) {
+        super(EntityType.SNOWBALL, world);
     }
 
     protected Item getDefaultItem() {

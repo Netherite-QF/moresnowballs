@@ -17,9 +17,9 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class StoneNuggetSnowballEntity extends ThrownItemEntity {
-    public StoneNuggetSnowballEntity(EntityType<? extends StoneNuggetSnowballEntity> entityType, World world) {
+    /*public StoneNuggetSnowballEntity(EntityType<? extends StoneNuggetSnowballEntity> entityType, World world) {
         super(entityType, world);
-    }
+    }*/
 
     public StoneNuggetSnowballEntity(World world, LivingEntity owner) {
         super(MoreSnowballs.STONE_NUGGET_SNOWBALL_ENTITY_ENTITY_TYPE, owner, world);
@@ -27,6 +27,10 @@ public class StoneNuggetSnowballEntity extends ThrownItemEntity {
 
     public StoneNuggetSnowballEntity(World world, double x, double y, double z) {
         super(MoreSnowballs.STONE_NUGGET_SNOWBALL_ENTITY_ENTITY_TYPE, x, y, z, world);
+    }
+
+    public StoneNuggetSnowballEntity(EntityType<Entity> entityEntityType, World world) {
+        super(EntityType.SNOWBALL, world);
     }
 
     protected Item getDefaultItem() {

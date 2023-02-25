@@ -17,9 +17,9 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class GlowInkSnowballEntity extends ThrownItemEntity {
-    public GlowInkSnowballEntity(EntityType<? extends GlowInkSnowballEntity> entityType, World world) {
+    /*public GlowInkSnowballEntity(EntityType<? extends GlowInkSnowballEntity> entityType, World world) {
         super(entityType, world);
-    }
+    }*/
 
     public GlowInkSnowballEntity(World world, LivingEntity owner) {
         super(MoreSnowballs.GLOW_INK_SNOWBALL_ENTITY_ENTITY_TYPE, owner, world);
@@ -27,6 +27,10 @@ public class GlowInkSnowballEntity extends ThrownItemEntity {
 
     public GlowInkSnowballEntity(World world, double x, double y, double z) {
         super(MoreSnowballs.GLOW_INK_SNOWBALL_ENTITY_ENTITY_TYPE, x, y, z, world);
+    }
+
+    public GlowInkSnowballEntity(EntityType<Entity> entityEntityType, World world) {
+        super(EntityType.SNOWBALL, world);
     }
 
     protected Item getDefaultItem() {

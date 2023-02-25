@@ -6,43 +6,12 @@
 package com.maomao.more_snowballs;
 
 import com.maomao.more_snowballs.effects.SlimeStatusEffect;
-import com.maomao.more_snowballs.entity.snowballs.AmethystSnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.BrickSnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.DarknessSnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.EnderSnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.ExpSnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.GlowInkSnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.GunpowderSnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.HealthySnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.IceSnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.MilkSnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.ObsidianSnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.PowderSnowBallEntity;
-import com.maomao.more_snowballs.entity.snowballs.SlimeSnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.SpectralSnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.StoneNuggetSnowballEntity;
-import com.maomao.more_snowballs.entity.snowballs.WitherSnowballEntity;
-import com.maomao.more_snowballs.items.AmethystSnowBallItem;
-import com.maomao.more_snowballs.items.BrickSnowBallItem;
-import com.maomao.more_snowballs.items.DarknessSnowBallItem;
-import com.maomao.more_snowballs.items.EnderSnowBallItem;
-import com.maomao.more_snowballs.items.ExpSnowBallItem;
-import com.maomao.more_snowballs.items.GlowInkSnowBallItem;
-import com.maomao.more_snowballs.items.GunpowderSnowBallItem;
-import com.maomao.more_snowballs.items.HealthySnowBallItem;
-import com.maomao.more_snowballs.items.IceSnowBallItem;
-import com.maomao.more_snowballs.items.MilkSnowBallItem;
-import com.maomao.more_snowballs.items.ObsidianSnowBallItem;
-import com.maomao.more_snowballs.items.PowderSnowBallItem;
-import com.maomao.more_snowballs.items.SlimeSnowBallItem;
-import com.maomao.more_snowballs.items.SpectralSnowBallItem;
-import com.maomao.more_snowballs.items.StoneNuggetSnowBallItem;
-import com.maomao.more_snowballs.items.WitherSnowBallItem;
+import com.maomao.more_snowballs.entity.snowballs.*;
+import com.maomao.more_snowballs.items.*;
 import com.maomao.more_snowballs.recipes.ExpSnowballRecipe;
 import com.maomao.more_snowballs.recipes.HealthySnowballRecipe;
 import com.maomao.more_snowballs.recipes.MilkSnowballRecipe;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -52,11 +21,11 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialRecipeSerializer;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class MoreSnowballs implements ModInitializer {
     public static final String MODID = "more_snowballs";
@@ -106,35 +75,35 @@ public class MoreSnowballs implements ModInitializer {
     }
 
     public void onInitialize() {
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "ice_snowball"), IceSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "slime_snowball"), SlimeSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "spectral_snowball"), SpectralSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "crushed_ice"), CRUSHED_ICE);
-        Registry.register(Registry.STATUS_EFFECT, new Identifier("more_snowballs", "slime"), SLIME);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "wither_bone"), WITHER_BONE);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "powder_snow_dust"), POWDER_SNOW_DUST);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "stone_nugget"), STONE_NUGGET);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "wither_snowball"), WitherSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "amethyst_snowball"), AmethystSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "powder_snow_ball"), PowderSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "stone_nugget_snowball"),
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "ice_snowball"), IceSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "slime_snowball"), SlimeSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "spectral_snowball"), SpectralSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "crushed_ice"), CRUSHED_ICE);
+        Registry.register(Registries.STATUS_EFFECT, new Identifier("more_snowballs", "slime"), SLIME);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "wither_bone"), WITHER_BONE);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "powder_snow_dust"), POWDER_SNOW_DUST);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "stone_nugget"), STONE_NUGGET);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "wither_snowball"), WitherSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "amethyst_snowball"), AmethystSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "powder_snow_ball"), PowderSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "stone_nugget_snowball"),
                 StoneNuggetSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "gunpowder_snowball"), GunpowderSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "glow_ink_snowball"), GlowInkSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "brick_snowball"), BrickSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "obsidian_snowball"), ObsidianSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "ender_snowball"), EnderSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "milk_snowball"), MilkSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "healthy_snowball"), HealthySnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "exp_snowball"), ExpSnowBallItem);
-        Registry.register(Registry.ITEM, new Identifier("more_snowballs", "darkness_snowball"), DarknessSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "gunpowder_snowball"), GunpowderSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "glow_ink_snowball"), GlowInkSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "brick_snowball"), BrickSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "obsidian_snowball"), ObsidianSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "ender_snowball"), EnderSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "milk_snowball"), MilkSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "healthy_snowball"), HealthySnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "exp_snowball"), ExpSnowBallItem);
+        Registry.register(Registries.ITEM, new Identifier("more_snowballs", "darkness_snowball"), DarknessSnowBallItem);
     }
 
     static {
-        CRUSHED_ICE = new Item((new Item.Settings()).group(MORE_SNOWBALLS_GROUP));
-        WITHER_BONE = new Item((new Item.Settings()).group(MORE_SNOWBALLS_GROUP));
-        POWDER_SNOW_DUST = new Item((new Item.Settings()).group(MORE_SNOWBALLS_GROUP));
-        STONE_NUGGET = new Item((new Item.Settings()).group(MORE_SNOWBALLS_GROUP));
+        CRUSHED_ICE = new Item((new Item.Settings()));
+        WITHER_BONE = new Item((new Item.Settings()));
+        POWDER_SNOW_DUST = new Item((new Item.Settings()));
+        STONE_NUGGET = new Item((new Item.Settings()));
         IceSnowBallItem = new IceSnowBallItem((new Item.Settings()).maxCount(16));
         SlimeSnowBallItem = new SlimeSnowBallItem((new Item.Settings()).maxCount(16));
         SpectralSnowBallItem = new SpectralSnowBallItem((new Item.Settings()).maxCount(16));
@@ -153,87 +122,87 @@ public class MoreSnowballs implements ModInitializer {
         DarknessSnowBallItem = new DarknessSnowBallItem((new Item.Settings()).maxCount(16));
         SLIME = (new SlimeStatusEffect()).addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
                 "7107DE5E-7CE8-4030-940E-514C1F160890", -0.15000000596046448, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
-        ICE_SNOWBALLS_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        ICE_SNOWBALLS_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "ice_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, IceSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        SLIME_SNOW_BALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        SLIME_SNOW_BALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "slime_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, SlimeSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        SPECTRAL_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        SPECTRAL_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "spectral_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, SpectralSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        WITHER_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        WITHER_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "wither_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, WitherSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        AMETHYST_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        AMETHYST_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "amethyst_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, AmethystSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        POWDER_SNOW_BALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        POWDER_SNOW_BALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "powder_snow_ball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, PowderSnowBallEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        STONE_NUGGET_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        STONE_NUGGET_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "stone_nugget_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, StoneNuggetSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        GUNPOWDER_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        GUNPOWDER_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "gunpowder_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, GunpowderSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        GLOW_INK_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        GLOW_INK_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "glow_ink_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, GlowInkSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        BRICK_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        BRICK_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "brick_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, BrickSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        OBSIDIAN_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        OBSIDIAN_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "obsidian_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, ObsidianSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        ENDER_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        ENDER_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "ender_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, EnderSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        MILK_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        MILK_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "milk_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, MilkSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        HEALTHY_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        HEALTHY_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "healthy_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, HealthySnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        EXP_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        EXP_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "exp_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, ExpSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        DARKNESS_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registry.ENTITY_TYPE,
+        DARKNESS_SNOWBALL_ENTITY_ENTITY_TYPE = (EntityType) Registry.register(Registries.ENTITY_TYPE,
                 new Identifier("more_snowballs", "darkness_snowball"),
                 FabricEntityTypeBuilder.create(SpawnGroup.MISC, DarknessSnowballEntity::new)
                         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(4).trackedUpdateRate(10)
                         .build());
-        MORE_SNOWBALLS_GROUP = FabricItemGroupBuilder.create(new Identifier("more_snowballs", "more_snowballs_group"))
+        /*MORE_SNOWBALLS_GROUP = FabricItemGroupBuilder.create(new Identifier("more_snowballs", "more_snowballs_group"))
                 .icon(() -> {
                     return new ItemStack(IceSnowBallItem);
                 }).appendItems((ItemStack) -> {
@@ -258,5 +227,6 @@ public class MoreSnowballs implements ModInitializer {
                     ItemStack.add(new ItemStack(DarknessSnowBallItem));
                     ItemStack.add(new ItemStack(AmethystSnowBallItem));
                 }).build();
+    }*/
     }
 }

@@ -18,9 +18,9 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class HealthySnowballEntity extends ThrownItemEntity {
-    public HealthySnowballEntity(EntityType<? extends HealthySnowballEntity> entityType, World world) {
+    /*public HealthySnowballEntity(EntityType<? extends HealthySnowballEntity> entityType, World world) {
         super(entityType, world);
-    }
+    }*/
 
     public HealthySnowballEntity(World world, LivingEntity owner) {
         super(MoreSnowballs.HEALTHY_SNOWBALL_ENTITY_ENTITY_TYPE, owner, world);
@@ -28,6 +28,10 @@ public class HealthySnowballEntity extends ThrownItemEntity {
 
     public HealthySnowballEntity(World world, double x, double y, double z) {
         super(MoreSnowballs.HEALTHY_SNOWBALL_ENTITY_ENTITY_TYPE, x, y, z, world);
+    }
+
+    public HealthySnowballEntity(EntityType<Entity> entityEntityType, World world) {
+        super(EntityType.SNOWBALL, world);
     }
 
     protected Item getDefaultItem() {

@@ -18,9 +18,9 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class SlimeSnowballEntity extends ThrownItemEntity {
-    public SlimeSnowballEntity(EntityType<? extends SlimeSnowballEntity> entityType, World world) {
+    /*public SlimeSnowballEntity(EntityType<? extends SlimeSnowballEntity> entityType, World world) {
         super(entityType, world);
-    }
+    }*/
 
     public SlimeSnowballEntity(World world, LivingEntity owner) {
         super(MoreSnowballs.SLIME_SNOW_BALL_ENTITY_ENTITY_TYPE, owner, world);
@@ -28,6 +28,10 @@ public class SlimeSnowballEntity extends ThrownItemEntity {
 
     public SlimeSnowballEntity(World world, double x, double y, double z) {
         super(MoreSnowballs.SLIME_SNOW_BALL_ENTITY_ENTITY_TYPE, x, y, z, world);
+    }
+
+    public SlimeSnowballEntity(EntityType<Entity> entityEntityType, World world) {
+        super(EntityType.SNOWBALL, world);
     }
 
     protected Item getDefaultItem() {

@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialCraftingRecipe;
+import net.minecraft.recipe.book.CraftingRecipeCategory;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
@@ -16,8 +17,8 @@ import net.minecraft.world.World;
 public class ExpSnowballRecipe extends SpecialCraftingRecipe {
     private int ExpSnowballSlot = 0;
 
-    public ExpSnowballRecipe(Identifier id) {
-        super(id);
+    public ExpSnowballRecipe(Identifier id, CraftingRecipeCategory category) {
+        super(id, category);
     }
 
     public boolean matches(CraftingInventory inventory, World world) {
